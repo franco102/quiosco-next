@@ -1,5 +1,4 @@
-import { ProductsWithCategory } from "@/app/admin/products/page"
-import { Category, Product } from "@prisma/client"
+import { ProductsWithCategory } from "@/app/admin/products/page" 
 import Link from "next/link"
 
 type ProductTableProps ={

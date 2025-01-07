@@ -1,9 +1,7 @@
 'use client'
-import React from 'react'
-import ProductForm from './ProductForm'
+import React from 'react' 
 import { ProductSchema } from '@/src/schema'
-import { toast } from 'react-toastify'
-import { ImageUpload } from './ImageUpload'
+import { toast } from 'react-toastify' 
 import { createProduct } from '@/actions/create-product-actions'
 import { useRouter } from 'next/navigation'
  

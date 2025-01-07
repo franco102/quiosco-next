@@ -1,8 +1,7 @@
  import ProductSearchForm from '@/components/products/ProductSearchForm'
 import ProductTable from '@/components/products/ProductsTable'
 import { Heading } from '@/components/ui/Heading'
-import { prisma } from '@/src/lib/prisma'
-import Link from 'next/link'
+import { prisma } from '@/src/lib/prisma' 
 import React from 'react'
 async function searchProducts(searchTerm:string) {
   const products=await prisma.product.findMany({
