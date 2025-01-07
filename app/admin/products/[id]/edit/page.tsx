@@ -18,12 +18,12 @@ async function getProductById(id:number) {
     return product
 }
 
-export default async function EditProductPage({params}: { params: { id: string };  }) {
-  const productId = parseInt(params.id, 10);
-  if (isNaN(productId)) {
+export default async function EditProductPage({params}: { params: Promise<{ id: string }> }) {
+  const productId =   (await params).id
+  if (isNaN(+productId)) {
     notFound();
   }
-    const product=await getProductById(productId) 
+    const product=await getProductById(+productId) 
   return (
     <>
           <Heading>Editar Producto: {product.name}</Heading>
