@@ -23,7 +23,7 @@ import useSWR from 'swr'
 //   return orders
 // }
 
-const page = () => {
+const PageOrderAdmin = () => {
   const url='/admin/orders/api'
   const fetcher=()=>fetch(url).then(res=>res.json()).then(data=>data)
   const {data, isLoading}=useSWR<OrderWithProducts[]>(url,fetcher,{
@@ -54,4 +54,4 @@ const page = () => {
   )
 }
 
-export default page
+export default PageOrderAdmin
