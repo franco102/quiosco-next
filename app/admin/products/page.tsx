@@ -23,7 +23,7 @@ async function getProducts(skip:number) {
 
 export type ProductsWithCategory =Awaited<ReturnType<typeof getProducts>>
 
-export default async function ProductsPage({searchParams}:{searchParams:{page:string}})   {
+export default async function ProductsPage({searchParams}:{searchParams:Promise<{ page: string }>})   {
   const url=await searchParams
   const page=+url.page||1 
   const pageSize=10
