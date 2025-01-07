@@ -18,9 +18,9 @@ async function getProductById(id:number) {
     return product
 }
 
-export default async function EditProductPage({params}:{params:{id:number}})  {
-    const productParam=await params;
-    const product=await getProductById(productParam.id) 
+export default async function EditProductPage({params}:{params:{id:string}})  {
+    const productParam=params; 
+    const product=await getProductById(+productParam.id) 
   return (
     <>
           <Heading>Editar Producto: {product.name}</Heading>
