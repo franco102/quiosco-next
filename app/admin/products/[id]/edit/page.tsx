@@ -19,7 +19,7 @@ async function getProductById(id:number) {
 }
 
 export default async function EditProductPage({params}:Awaited<{
-  params: { id: string };
+  params: Promise<any>;
 }>)  {
     const productParam=await params;
     const product=await getProductById(+productParam.id) 
