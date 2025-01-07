@@ -23,7 +23,7 @@ export const useStore=create<Store>((set,get)=>({
         }else {
             order=[...get().order,{...data,quantity:1,subtotal:1*product.price}]
         }
-        set(state=>({
+        set(()=>({
             order 
         }))
     },
