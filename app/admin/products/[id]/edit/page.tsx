@@ -18,15 +18,10 @@ async function getProductById(id:number) {
     return product
 }
 
-export default async function EditProductPage({
-  searchParams,
-}: {
-  searchParams: { id: string };
-}) {
-  // Convertir el ID de los parámetros de búsqueda a número
-  const productId = parseInt(searchParams.id, 10);
+export default async function EditProductPage({params}: { params: { id: string };  }) {
+  const productId = parseInt(params.id, 10);
   if (isNaN(productId)) {
-    notFound(); // Manejo de error si no es un número válido
+    notFound();
   }
     const product=await getProductById(productId) 
   return (
